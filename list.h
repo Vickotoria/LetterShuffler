@@ -13,8 +13,16 @@
 typedef struct list list;
 
 
+/* Creates an empty list. This needs to be deallocated.
+   returns a pointer to a list
+   see also destroy_list
+*/
 list *create_list(void);
 
+/* Deallocates all resourses for this list and destroys it.
+   param l - the list to destroy
+   see also create_list
+*/
 void destroy_list(list *l);
 
 bool is_empty(list *l);
