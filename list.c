@@ -52,6 +52,8 @@ void destroy_list(list *l){
    free(l);
 }
 
+/* Returns true if the list is empty, otherwise false
+*/
 bool is_empty(list *l){
    if (l->size < 0) {
       fprintf(stderr, "Fatal flaw in program. Negative size\n");

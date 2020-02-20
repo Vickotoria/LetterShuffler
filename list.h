@@ -25,6 +25,8 @@ list *create_list(void);
 */
 void destroy_list(list *l);
 
+/* Returns true if the list is empty, otherwise false
+*/
 bool is_empty(list *l);
 
 void insert_element(list *l, char *str);
