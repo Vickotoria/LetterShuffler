@@ -5,9 +5,11 @@
 */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "list.h"
 
+//the internal node structure
 typedef struct node node;
 struct node{
    node *prev;
@@ -15,17 +17,33 @@ struct node{
    char *elem;
 };
 
+//the list head
 struct list {
    int size;
-   node *n;
+   node *first;
+   node *last;
 };
 
 
+/* Creates an empty list. This needs to be deallocated later
+
+*/
 list *create_list(void){
-   return NULL;
+   list *l = malloc(1 * sizeof(list));
+   if (l == NULL) {
+      perror("ERROR");
+   }
+
+   l->size = 0;
+   l->first = NULL;
+   l->last = NULL;
+
+   return l;
 }
 
 void destroy_list(list *l){
+   //todo remove nodes
+
    free(l);
 }
 
