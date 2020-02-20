@@ -7,11 +7,20 @@
 
 #include <stdio.h>
 
+#include "list.h"
+
 
 int main(void) {
-   int b = 3;
 
-   printf("%d\n", b);
+   //read the string and save it
+
+   //find all possible combinations
+   //save them in a list
+
+   //find duplicates in the list
+   //remove the duplicates
+
+   //print out the elements in the list
 
    return 0;
 }

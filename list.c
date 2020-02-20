@@ -25,8 +25,9 @@ struct list {
 };
 
 
-/* Creates an empty list. This needs to be deallocated later
-
+/* Creates an empty list. This needs to be deallocated.
+   returns a pointer to a list
+   see also destroy_list
 */
 list *create_list(void){
    list *l = malloc(1 * sizeof(list));
@@ -41,6 +42,10 @@ list *create_list(void){
    return l;
 }
 
+/* Deallocates all resourses for this list and destroys it.
+   param l - the list to destroy
+   see also create_list
+*/
 void destroy_list(list *l){
    //todo remove nodes
 
@@ -48,7 +53,12 @@ void destroy_list(list *l){
 }
 
 bool is_empty(list *l){
-   return true;
+   if (l->size < 0) {
+      fprintf(stderr, "Fatal flaw in program. Negative size\n");
+      return true;
+   }
+
+   return l->size == 0;
 }
 
 void insert_element(list *l, char *str){

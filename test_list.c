@@ -15,8 +15,10 @@ int main(void) {
 
    assert(l);
 
-   printf("wow");
-
+   if (is_empty(l)) {
+      printf("wow");
+   }
+   
    destroy_list(l);
 
    return 0;
