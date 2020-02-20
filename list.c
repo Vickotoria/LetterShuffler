@@ -33,6 +33,7 @@ list *create_list(void){
    list *l = malloc(1 * sizeof(list));
    if (l == NULL) {
       perror("ERROR");
+      exit(EXIT_FAILURE);
    }
 
    l->size = 0;
@@ -64,8 +65,23 @@ bool is_empty(list *l){
 }
 
 void insert_element(list *l, char *str){
-   l = NULL;
-   str = NULL;
+   node *n = malloc(1 * sizeof(node));
+   if (n == NULL) {
+      perror("Error");
+      exit(EXIT_FAILURE);
+   }
+
+   if (l->first == NULL && l->last == NULL) {
+      l->first = n;
+      l->last = n;
+   }
+   else if (l->first == l->last) {
+      l->last = n;
+   }
+
+   l->size++;
+   n->elem = str;
+   n->next = NULL;
 }
 
 char *inspect_element(list *l){
