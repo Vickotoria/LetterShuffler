@@ -54,6 +54,8 @@ void destroy_list(list *l){
 }
 
 /* Returns true if the list is empty, otherwise false
+   param l - the list to check
+   return true if the list is empty
 */
 bool is_empty(list *l){
    if (l->size < 0) {
@@ -64,6 +66,11 @@ bool is_empty(list *l){
    return l->size == 0;
 }
 
+/* Inserts the element in the list
+   param l - the list to insert to
+   param str the string to insert
+   see inspect_element and remove_element
+*/
 void insert_element(list *l, char *str){
    node *n = malloc(1 * sizeof(node));
    if (n == NULL) {
@@ -75,7 +82,9 @@ void insert_element(list *l, char *str){
       l->first = n;
       l->last = n;
    }
-   else if (l->first == l->last) {
+   else {
+      n->prev = l->last;
+      l->last->next = n;
       l->last = n;
    }
 

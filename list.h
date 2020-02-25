@@ -26,9 +26,16 @@ list *create_list(void);
 void destroy_list(list *l);
 
 /* Returns true if the list is empty, otherwise false
+   param l - the list to check
+   return true if the list is empty
 */
 bool is_empty(list *l);
 
+/* Inserts the element in the list
+   param l - the list to insert to
+   param str the string to insert
+   see inspect_element and remove_element
+*/
 void insert_element(list *l, char *str);
 
 char *inspect_element(list *l);
