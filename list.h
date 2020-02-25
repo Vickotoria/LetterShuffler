@@ -38,12 +38,13 @@ bool is_empty(list *l);
 */
 void insert_element(list *l, char *str);
 
+/* Returns a copy of the first node in the list. Please note that this
+   element might be null
+   param l - the list to inspect
+   return the string of the first element in the list
+*/
 char *inspect_element(list *l);
 
 char *remove_element(list *l);
-
-char *get_first(list *l);
-
-char *get_last(list *l);
 
 #endif

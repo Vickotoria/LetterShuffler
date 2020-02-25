@@ -93,22 +93,16 @@ void insert_element(list *l, char *str){
    n->next = NULL;
 }
 
+/* Returns a copy of the first node in the list. Please note that this
+   element might be null 
+   param l - the list to inspect
+   return the string of the first element in the list
+*/
 char *inspect_element(list *l){
-   l = NULL;
-   return NULL;
+   return l->first->elem;
 }
 
 char *remove_element(list *l){
-   l = NULL;
-   return NULL;
-}
-
-char *get_first(list *l){
-   l = NULL;
-   return NULL;
-}
-
-char *get_last(list *l){
    l = NULL;
    return NULL;
 }
